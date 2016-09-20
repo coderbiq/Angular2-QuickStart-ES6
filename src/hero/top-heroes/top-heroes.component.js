@@ -9,8 +9,16 @@ const style = require('./top-heroes.component.css');
     template: template
 })
 export class TopHeroesComponent {
-    constructor(service) {
-        this.heroes = service.GetHeroes();
+
+    constructor(heroService) {
+        this.heroService = heroService;
+        this.heroes = [];
+    }
+
+    ngOnInit() {
+        this.heroService.GetHeroes().then((heroes) => {
+            this.heroes = heroes;
+        });
     }
 }
 TopHeroesComponent.parameters = [HeroService];

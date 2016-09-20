@@ -13,12 +13,15 @@ export class HeroDetailComponent {
     constructor(route, heroService) {
         this.route = route;
         this.heroService = heroService;
+        this.hero = undefined;
     }
 
     ngOnInit() {
         this.route.params.forEach((params) => {
             let heroId = params.id;
-            this.hero = this.heroService.GetHero(heroId);
+            this.heroService.GetHero(heroId).then((hero) => {
+                this.hero = hero;
+            });
         })
     }
 }

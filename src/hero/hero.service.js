@@ -17,7 +17,7 @@ export class HeroService {
             heroes.push(hero);
         }
 
-        return heroes;
+        return Promise.resolve(heroes);
     }
 
     GetHero(id) {
@@ -26,9 +26,9 @@ export class HeroService {
             if(hero.Id === id) {
                 let h = new Hero();
                 h.ExchangeJson(hero);
-                return h
+                return Promise.resolve(h);
             }
         }
-        return undefined;
+        return Promise.reject();
     }
 }
