@@ -16,7 +16,7 @@ export class TopHeroesComponent {
     }
 
     ngOnInit() {
-        this.heroService.GetHeroes().then((heroes) => {
+        this.heroService.getHeroes().then((heroes) => {
             this.heroes = heroes;
         });
     }

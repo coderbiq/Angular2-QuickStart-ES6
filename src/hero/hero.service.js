@@ -11,7 +11,7 @@ export class HeroService {
         this.heroesUrl = 'app/heroes';
     }
 
-    GetHeroes() {
+    getHeroes() {
         return this.http.get(this.heroesUrl)
             .toPromise()
             .then(response => {
@@ -26,7 +26,7 @@ export class HeroService {
             });
     }
 
-    GetHero(id) {
+    getHero(id) {
         let url =  `${this.heroesUrl}/${id}`;
         return this.http.get(url)
             .toPromise()

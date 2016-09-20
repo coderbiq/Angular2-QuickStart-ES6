@@ -19,7 +19,7 @@ export class HeroDetailComponent {
     ngOnInit() {
         this.route.params.forEach((params) => {
             let heroId = params.id;
-            this.heroService.GetHero(heroId).then((hero) => {
+            this.heroService.getHero(heroId).then((hero) => {
                 this.hero = hero;
             });
         })
