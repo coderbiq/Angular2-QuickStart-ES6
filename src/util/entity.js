@@ -2,9 +2,9 @@ export class Entity {
 
     constructor() {
         let now = new Date();
-        this.Id = '';
-        this.Created = now.getTime();
-        this.Updated = now.getTime();
+        this.id = '';
+        this.created = now.getTime();
+        this.updated = now.getTime();
     }
 
     ExchangeJson(jsonData) {

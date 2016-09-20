@@ -1,34 +1,40 @@
+import { Injectable }    from '@angular/core';
+import { Headers, Http } from '@angular/http';
+
 import { Hero } from './hero';
 
-const Heroes = [
-    {Id: 'test-hero-1', Name: 'test hero 1'},
-    {Id: 'test-hero-2', Name: 'test hero 2'},
-    {Id: 'test-hero-3', Name: 'test hero 3'},
-    {Id: 'test-hero-4', Name: 'test hero 4'}
-]
-
+@Injectable()
 export class HeroService {
+
+    constructor(http) {
+        this.http = http;
+        this.heroesUrl = 'app/heroes';
+    }
+
     GetHeroes() {
-        let heroes = [];
-
-        for(let i in Heroes) {
-            let hero = new Hero();
-            hero.ExchangeJson(Heroes[i])
-            heroes.push(hero);
-        }
-
-        return Promise.resolve(heroes);
+        return this.http.get(this.heroesUrl)
+            .toPromise()
+            .then(response => {
+                let heroes = [];
+                let data = response.json().data;
+                for(let i in data) {
+                    let hero = new Hero();
+                    hero.ExchangeJson(data[i])
+                    heroes.push(hero);
+                }
+                return heroes;
+            });
     }
 
     GetHero(id) {
-        for(let i in Heroes) {
-            let hero = Heroes[i];
-            if(hero.Id === id) {
-                let h = new Hero();
-                h.ExchangeJson(hero);
-                return Promise.resolve(h);
-            }
-        }
-        return Promise.reject();
+        let url =  `${this.heroesUrl}/${id}`;
+        return this.http.get(url)
+            .toPromise()
+            .then(response => {
+                let hero = new Hero();
+                hero.ExchangeJson(response.json().data);
+                return hero;
+            });
     }
 }
+HeroService.parameters = [Http];

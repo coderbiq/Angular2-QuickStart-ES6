@@ -2,8 +2,8 @@
     <h3>Top Heroes</h3>
     <div class="row">
         <div class="col-sm-3" *ngFor="let hero of heroes">
-            <a [routerLink]="['/hero/detail', hero.Id]" class="hero-box well well-sm">
-                {{hero.Name}}
+            <a [routerLink]="['/hero/detail', hero.id]" class="hero-box well well-sm">
+                {{hero.name}}
             </a>
         </div>
     </div>

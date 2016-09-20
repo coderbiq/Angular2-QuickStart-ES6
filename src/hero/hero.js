@@ -5,6 +5,6 @@ export class Hero extends Entity {
     constructor() {
         super();
 
-        this.Name = 'unknown';
+        this.name = 'unknown';
     }
 }
