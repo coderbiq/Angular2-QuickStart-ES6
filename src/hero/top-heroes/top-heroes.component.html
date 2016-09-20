@@ -2,7 +2,7 @@
     <h3>Top Heroes</h3>
     <div class="row">
         <div class="col-sm-3" *ngFor="let hero of heroes">
-            <a href class="hero-box well well-sm">
+            <a [routerLink]="['/hero/detail', hero.Id]" class="hero-box well well-sm">
                 {{hero.Name}}
             </a>
         </div>

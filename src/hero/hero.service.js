@@ -19,4 +19,16 @@ export class HeroService {
 
         return heroes;
     }
+
+    GetHero(id) {
+        for(let i in Heroes) {
+            let hero = Heroes[i];
+            if(hero.Id === id) {
+                let h = new Hero();
+                h.ExchangeJson(hero);
+                return h
+            }
+        }
+        return undefined;
+    }
 }
