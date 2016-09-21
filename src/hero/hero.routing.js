@@ -1,6 +1,7 @@
 import { RouterModule } from '@angular/router';
-import { HeroDetailComponent }      from '../hero/detail';
-import { TopHeroesComponent } from '../hero/top-heroes';
+import { HeroDetailComponent } from './detail';
+import { TopHeroesComponent } from './top-heroes';
+import { HeroesComponent } from './heroes';
 
 export const HeroRoutes = RouterModule.forRoot([
     {
@@ -12,6 +13,9 @@ export const HeroRoutes = RouterModule.forRoot([
             }, {
                 path: 'detail/:id',
                 component: HeroDetailComponent
+            }, {
+                path: 'list',
+                component: HeroesComponent
             }
         ]
     }

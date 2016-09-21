@@ -4,16 +4,16 @@ import { FormsModule } from '@angular/forms';
 
 import { HeroService } from './hero.service';
 import { HeroRoutes } from './hero.routing';
-import { HeroListComponent } from './hero-list.component';
+import { HeroesComponent } from './heroes';
 import { TopHeroesComponent } from './top-heroes';
 import { HeroDetailComponent } from './detail';
 import { MiniHeroDetailComponent } from './mini-detail';
 
 @NgModule({
     imports: [ BrowserModule, FormsModule, HeroRoutes ],
-    exports: [ HeroListComponent, TopHeroesComponent ],
+    exports: [ HeroesComponent, TopHeroesComponent ],
     declarations: [
-        HeroListComponent,
+        HeroesComponent,
         TopHeroesComponent,
         HeroDetailComponent,
         MiniHeroDetailComponent
