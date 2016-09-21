@@ -12,6 +12,10 @@ export class HeroService {
         this.headers = new Headers({'Content-Type': 'application/json'});
     }
 
+    allPowers() {
+        return ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
+    }
+
     getHeroes() {
         return this.http.get(this.heroesUrl)
             .toPromise()

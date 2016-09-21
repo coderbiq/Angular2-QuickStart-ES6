@@ -12,6 +12,7 @@ export class HeroFormComponent {
 
     constructor(heroService) {
         this.heroService = heroService;
+        this.powers = this.heroService.allPowers();
     }
 
     saveHero() {

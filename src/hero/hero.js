@@ -5,6 +5,7 @@ export class Hero extends Entity {
     constructor() {
         super();
 
-        this.name = 'unknown';
+        this.name = '';
+        this.power = '';
     }
 }
