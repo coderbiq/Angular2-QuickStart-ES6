@@ -7,13 +7,17 @@ export class Entity {
         this.updated = now.getTime();
     }
 
-    ExchangeJson(jsonData) {
+    exchangeJson(jsonData) {
         for(let propName in jsonData) {
             this[propName] = jsonData[propName];
         }
     }
 
-    ToJson() {
-        return JSON.parse(JSON.stringify( this ));;
+    toJson() {
+        return JSON.parse(this.toString());;
+    }
+
+    toString() {
+        return JSON.stringify(this);
     }
 }

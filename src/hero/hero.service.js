@@ -9,6 +9,7 @@ export class HeroService {
     constructor(http) {
         this.http = http;
         this.heroesUrl = 'app/heroes';
+        this.headers = new Headers({'Content-Type': 'application/json'});
     }
 
     getHeroes() {
@@ -19,7 +20,7 @@ export class HeroService {
                 let data = response.json().data;
                 for(let i in data) {
                     let hero = new Hero();
-                    hero.ExchangeJson(data[i])
+                    hero.exchangeJson(data[i])
                     heroes.push(hero);
                 }
                 return heroes;
@@ -32,9 +33,16 @@ export class HeroService {
             .toPromise()
             .then(response => {
                 let hero = new Hero();
-                hero.ExchangeJson(response.json().data);
+                hero.exchangeJson(response.json().data);
                 return hero;
             });
+    }
+
+    saveHero(hero) {
+        let url = `${this.heroesUrl}/${hero.id}`;
+        return this.http.put(url, hero.toString(), {headers: this.headers})
+            .toPromise()
+            .then(() => hero);
     }
 }
 HeroService.parameters = [Http];

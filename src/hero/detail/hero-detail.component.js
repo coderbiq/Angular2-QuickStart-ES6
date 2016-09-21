@@ -14,6 +14,13 @@ export class HeroDetailComponent {
         this.route = route;
         this.heroService = heroService;
         this.hero = undefined;
+        this.submitted = false;
+    }
+
+    saveHero() {
+        this.heroService.saveHero(this.hero).then((hero) => {
+            this.submitted = true;
+        });
     }
 
     ngOnInit() {

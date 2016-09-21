@@ -1,2 +1,20 @@
 <h3>Hero Detail</h3>
-<strong>{{hero?.name}}</strong>
+<dl class="dl-horizontal">
+    <dt>ID:</dt><dd>{{hero?.id}}</dd>
+    <dt>Name:</dt><dd>{{hero?.name}}</dd>
+</dl>
+
+<form class="form-horizontal" (ngSubmit)="saveHero()" #heroForm="ngForm" *ngIf="hero">
+    <div class="form-group">
+        <label class="col-sm-2 control-label" for="name">Name</label>
+        <div class="col-sm-10" [ngClass]="{true: 'has-error'}[nameInput.invalid]">
+            <input type="text" class="form-control" name="name" [(ngModel)]="hero.name" required #nameInput="ngModel">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-10 col-sm-offset-2">
+            <button type="submit" class="btn btn-primary" [disabled]="nameInput.pristine || heroForm.form.invalid">Save</button>
+            <span class="text-success" *ngIf="submitted">Save Success</span>
+        </div>
+    </div>
+</form>
