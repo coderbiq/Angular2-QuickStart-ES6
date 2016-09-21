@@ -23,6 +23,10 @@ export class HeroDetailComponent {
         });
     }
 
+    goBack() {
+        window.history.back();
+    }
+
     ngOnInit() {
         this.route.params.forEach((params) => {
             let heroId = params.id;
