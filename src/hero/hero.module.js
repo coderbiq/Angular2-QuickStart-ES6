@@ -8,6 +8,7 @@ import { HeroesComponent } from './heroes';
 import { TopHeroesComponent } from './top-heroes';
 import { HeroDetailComponent } from './detail';
 import { MiniHeroDetailComponent } from './mini-detail';
+import { HeroFormComponent } from './hero-form';
 
 @NgModule({
     imports: [ BrowserModule, FormsModule, HeroRoutes ],
@@ -16,7 +17,8 @@ import { MiniHeroDetailComponent } from './mini-detail';
         HeroesComponent,
         TopHeroesComponent,
         HeroDetailComponent,
-        MiniHeroDetailComponent
+        MiniHeroDetailComponent,
+        HeroFormComponent
     ],
     providers: [HeroService]
 })
