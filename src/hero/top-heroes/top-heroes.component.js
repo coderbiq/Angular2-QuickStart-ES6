@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { HeroService } from '../hero.service';
 
 const template = require('./top-heroes.component.html');
-const style = require('./top-heroes.component.css');
 
 @Component({
     selector: 'top-heroes',
