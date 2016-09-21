@@ -11,6 +11,11 @@ export class HeroesComponent {
     constructor(heroService) {
         this.heroService = heroService;
         this.heroes = [];
+        this.selectedHero = undefined;
+    }
+
+    selectHero(hero) {
+        this.selectedHero = hero;
     }
 
     ngOnInit() {
