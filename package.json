@@ -2,9 +2,13 @@
     "name": "angular2-quickstart",
     "version": "1.0.0",
     "scripts": {
-        "start": "webpack-dev-server --inline --progress --port 8089"
+        "start": "webpack-dev-server --inline --progress --port 8089",
+        "build": "webpack --config config/webpack.prod.js --progress --profile --bail --display-modules"
     },
     "license": "ISC",
+    "engines": {
+        "node": ">=0.10.0"
+    },
     "dependencies": {
         "@angular/common": "2.0.0",
         "@angular/compiler": "2.0.0",
