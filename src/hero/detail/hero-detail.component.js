@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HeroService } from '../hero.service';
 
-const template = require('./hero-detail.component.html');
+let template = require('./hero-detail.component.html');
 
 @Component({
     selector: 'hero-detail',

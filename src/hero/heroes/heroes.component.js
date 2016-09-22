@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HeroService } from '../hero.service';
 import { Hero } from '../hero';
 
-const template = require('./heroes.component.html');
+let template = require('./heroes.component.html');
 
 @Component({
     selector: 'heroes',

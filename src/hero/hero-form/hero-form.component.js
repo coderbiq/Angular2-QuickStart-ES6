@@ -1,7 +1,7 @@
 import { Component, EventEmitter } from '@angular/core';
 import { HeroService } from '../hero.service';
 
-const template = require('./hero-form.component.html');
+let template = require('./hero-form.component.html');
 
 @Component({
     selector: 'hero-form',

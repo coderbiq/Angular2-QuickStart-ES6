@@ -3,5 +3,5 @@ import { AppModule } from './app/app.module';
 
 require('./style.css');
 
-const platform = platformBrowserDynamic();
+let platform = platformBrowserDynamic();
 platform.bootstrapModule(AppModule);
