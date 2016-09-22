@@ -16,6 +16,10 @@ export const HeroRoutes = RouterModule.forRoot([
             }, {
                 path: 'list',
                 component: HeroesComponent
+            }, {
+                path: '',
+                redirectTo: 'list',
+                pathMatch: 'full'
             }
         ]
     }
