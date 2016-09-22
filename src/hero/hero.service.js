@@ -43,8 +43,21 @@ export class HeroService {
     }
 
     saveHero(hero) {
+        if(hero.id) {
+            return this.updateHero(hero);
+        }
+        return this.createHero(hero);
+    }
+
+    updateHero(hero) {
         let url = `${this.heroesUrl}/${hero.id}`;
         return this.http.put(url, hero.toString(), {headers: this.headers})
+            .toPromise()
+            .then(() => hero);
+    }
+
+    createHero(hero) {
+        return this.http.post(this.heroesUrl, hero.toString(), {headers: this.headers})
             .toPromise()
             .then(() => hero);
     }

@@ -12,6 +12,7 @@
         </div>
     </div>
     <div class="col-sm-9">
-        <mini-hero-detail [hero]="selectedHero" *ngIf="selectedHero"></mini-hero-detail>
+        <mini-hero-detail [hero]="selectedHero" *ngIf="selectedHero && !newHero"></mini-hero-detail>
+        <hero-form [hero]="newHero" (onSave)="onCreateHero($e)" *ngIf="newHero"></hero-form>
     </div>
 </div>
