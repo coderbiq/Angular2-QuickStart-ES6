@@ -1,12 +1,19 @@
-<h3 class="text-right">
-    <span class="pull-left">Hero Detail</span>
-    <button type="button" class="btn btn-default" (click)="goBack()">Back</button>
+<h3 class="sub-header">
+    <button type="button" class="btn btn-default pull-right" (click)="goBack()">Back</button>
+    Hero Detail
 </h3>
 
-<dl class="dl-horizontal">
-    <dt>ID:</dt><dd>{{hero?.id}}</dd>
-    <dt>Name:</dt><dd>{{hero?.name}}</dd>
-    <dt>Power:</dt><dd>{{hero?.power}}</dd>
-</dl>
-
-<hero-form [hero]="hero"></hero-form>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="well well-sm">
+            <dl class="dl-horizontal">
+                <dt>ID:</dt><dd>{{hero?.id}}</dd>
+                <dt>Name:</dt><dd>{{hero?.name}}</dd>
+                <dt>Power:</dt><dd>{{hero?.power}}</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <hero-form [hero]="hero"></hero-form>
+    </div>
+</div>

@@ -1,8 +1,10 @@
 <div class="container">
-    <h1>Tour Of Heroes</h1>
-    <ul class="nav nav-pills">
-        <li routerLinkActive="active"><a routerLink="/dashboard">Dashboard</a></li>
-        <li routerLinkActive="active"><a routerLink="/hero/list">Heroes</a></li>
-    </ul>
+    <div class="page-header">
+        <ul class="nav nav-pills pull-right">
+            <li routerLinkActive="active"><a routerLink="/dashboard">Dashboard</a></li>
+            <li routerLinkActive="active"><a routerLink="/hero/list">Heroes</a></li>
+        </ul>
+        <h1>Tour Of Heroes</h1>
+    </div>
     <router-outlet></router-outlet>
 </div>
