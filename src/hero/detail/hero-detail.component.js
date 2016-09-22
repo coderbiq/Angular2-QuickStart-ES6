@@ -4,10 +4,6 @@ import { HeroService } from '../hero.service';
 
 const template = require('./hero-detail.component.html');
 
-@Component({
-    selector: 'hero-detail',
-    template: template
-})
 export class HeroDetailComponent {
 
     constructor(route, heroService) {
@@ -37,3 +33,9 @@ export class HeroDetailComponent {
     }
 }
 HeroDetailComponent.parameters = [ActivatedRoute, HeroService];
+HeroDetailComponent.annotations = [
+    new Component({
+        selector: 'hero-detail',
+        template: template
+    })
+];

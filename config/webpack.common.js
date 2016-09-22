@@ -22,11 +22,11 @@ module.exports = {
         exclude: /(node_modules)/,
         query: {
             cacheDirectory: true,
-            presets: ['es2015', 'stage-1'],
+            presets: ['es2015'],
             plugins: [
                 // 'transform-runtime',
                 // 'add-module-exports',
-                'transform-decorators-legacy'
+                // 'transform-decorators-legacy'
             ]
         }
       },

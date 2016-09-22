@@ -4,10 +4,6 @@ import { Hero } from '../hero';
 
 const template = require('./heroes.component.html');
 
-@Component({
-    selector: 'heroes',
-    template: template
-})
 export class HeroesComponent {
     constructor(heroService) {
         this.heroService = heroService;
@@ -43,3 +39,9 @@ export class HeroesComponent {
     }
 }
 HeroesComponent.parameters = [HeroService];
+HeroesComponent.annotations = [
+    new Component({
+        selector: 'heroes',
+        template: template
+    })
+];

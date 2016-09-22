@@ -10,16 +10,19 @@ import { HeroDetailComponent } from './detail';
 import { MiniHeroDetailComponent } from './mini-detail';
 import { HeroFormComponent } from './hero-form';
 
-@NgModule({
-    imports: [ BrowserModule, FormsModule, HeroRoutes ],
-    exports: [ HeroesComponent, TopHeroesComponent ],
-    declarations: [
-        HeroesComponent,
-        TopHeroesComponent,
-        HeroDetailComponent,
-        MiniHeroDetailComponent,
-        HeroFormComponent
-    ],
-    providers: [HeroService]
-})
 export class HeroModule { }
+
+HeroModule.annotations = [
+    new NgModule({
+        imports: [ BrowserModule, FormsModule, HeroRoutes ],
+        exports: [ HeroesComponent, TopHeroesComponent ],
+        declarations: [
+            HeroesComponent,
+            TopHeroesComponent,
+            HeroDetailComponent,
+            MiniHeroDetailComponent,
+            HeroFormComponent
+        ],
+        providers: [HeroService]
+    })
+];

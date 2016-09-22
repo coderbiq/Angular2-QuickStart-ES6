@@ -3,7 +3,6 @@ import { Headers, Http } from '@angular/http';
 
 import { Hero } from './hero';
 
-@Injectable()
 export class HeroService {
 
     constructor(http) {
@@ -63,3 +62,6 @@ export class HeroService {
     }
 }
 HeroService.parameters = [Http];
+HeroService.annotations = [
+    new Injectable()
+]

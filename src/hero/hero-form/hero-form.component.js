@@ -3,12 +3,6 @@ import { HeroService } from '../hero.service';
 
 const template = require('./hero-form.component.html');
 
-@Component({
-    selector: 'hero-form',
-    template: template,
-    inputs: ['hero'],
-    outputs: ['onSave']
-})
 export class HeroFormComponent {
 
     constructor(heroService) {
@@ -25,3 +19,11 @@ export class HeroFormComponent {
     }
 }
 HeroFormComponent.parameters = [HeroService];
+HeroFormComponent.annotations = [
+    new Component({
+        selector: 'hero-form',
+        template: template,
+        inputs: ['hero'],
+        outputs: ['onSave']
+    })
+];

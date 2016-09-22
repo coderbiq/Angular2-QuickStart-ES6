@@ -3,11 +3,6 @@ import { HeroService } from '../hero.service';
 
 const template = require('./top-heroes.component.html');
 
-@Component({
-    selector: 'top-heroes',
-    template: template,
-    inputs: ['limit']
-})
 export class TopHeroesComponent {
 
     constructor(heroService) {
@@ -23,3 +18,10 @@ export class TopHeroesComponent {
     }
 }
 TopHeroesComponent.parameters = [HeroService];
+TopHeroesComponent.annotations = [
+    new Component({
+        selector: 'top-heroes',
+        template: template,
+        inputs: ['limit']
+    })
+];
