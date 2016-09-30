@@ -3,7 +3,7 @@ import { HeroDetailComponent } from './detail';
 import { TopHeroesComponent } from './top-heroes';
 import { HeroesComponent } from './heroes';
 
-export const HeroRoutes = RouterModule.forRoot([
+export const HeroRoutes = RouterModule.forChild([
     {
         path: 'hero',
         children: [
